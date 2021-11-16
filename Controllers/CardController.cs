@@ -11,11 +11,10 @@ namespace BinlistAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //Add authorization attribute
     public class CardController : ControllerBase
     {
       
-
-        
         private readonly ICardService _cardservice;
 
         public CardController (ICardService cardservice)
@@ -29,7 +28,7 @@ namespace BinlistAPI.Controllers
         {
                  //making my controller code as lean as possible
                 return await _cardservice.GetCardByIssuerIdentificationNumberAsync(issuerIdentificationNumber);
-        
+       
         }
 
     }
